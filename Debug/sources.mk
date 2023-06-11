@@ -28,7 +28,6 @@ CPP_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 src/COTS/APP/ACC \
-src/COTS/APP/Exit_State \
 src/COTS/APP/FCW \
 src/COTS/APP/Mob_APP \
 src/COTS/APP/NCC \
@@ -37,7 +36,6 @@ src/COTS/HAL/BUZZER \
 src/COTS/HAL/Bluetooth \
 src/COTS/HAL/Car_Movement \
 src/COTS/HAL/DCMOTOR \
-src/COTS/HAL/LED \
 src/COTS/HAL/UltraSonic \
 src/COTS/MCAL/EXTI \
 src/COTS/MCAL/GPIO \

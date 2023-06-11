@@ -28,7 +28,6 @@
 #include "../NCC/NCC_interface.h"
 #include "../ACC/ACC_interface.h"
 #include "../FCW/FCW_interface.h"
-#include "../Exit_State/Exit_State_interface.h"
 
 #include "Mob_APP_interface.h"
 #include "Mob_APP_private.h"

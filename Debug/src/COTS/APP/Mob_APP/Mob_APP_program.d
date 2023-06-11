@@ -19,7 +19,6 @@ src/COTS/APP/Mob_APP/Mob_APP_program.o: \
  ../src/COTS/APP/Mob_APP/../NCC/NCC_interface.h \
  ../src/COTS/APP/Mob_APP/../ACC/ACC_interface.h \
  ../src/COTS/APP/Mob_APP/../FCW/FCW_interface.h \
- ../src/COTS/APP/Mob_APP/../Exit_State/Exit_State_interface.h \
  ../src/COTS/APP/Mob_APP/Mob_APP_interface.h \
  ../src/COTS/APP/Mob_APP/Mob_APP_private.h \
  ../src/COTS/APP/Mob_APP/Mob_APP_config.h
@@ -61,8 +60,6 @@ e:\carmovementmodes_workspace\src\cots\lib\lstd_bitmath.h:
 ../src/COTS/APP/Mob_APP/../ACC/ACC_interface.h:
 
 ../src/COTS/APP/Mob_APP/../FCW/FCW_interface.h:
-
-../src/COTS/APP/Mob_APP/../Exit_State/Exit_State_interface.h:
 
 ../src/COTS/APP/Mob_APP/Mob_APP_interface.h:
 

@@ -22,7 +22,6 @@ RM := rm -rf
 -include src/COTS/MCAL/GPIO/subdir.mk
 -include src/COTS/MCAL/EXTI/subdir.mk
 -include src/COTS/HAL/UltraSonic/subdir.mk
--include src/COTS/HAL/LED/subdir.mk
 -include src/COTS/HAL/DCMOTOR/subdir.mk
 -include src/COTS/HAL/Car_Movement/subdir.mk
 -include src/COTS/HAL/Bluetooth/subdir.mk
@@ -31,7 +30,6 @@ RM := rm -rf
 -include src/COTS/APP/NCC/subdir.mk
 -include src/COTS/APP/Mob_APP/subdir.mk
 -include src/COTS/APP/FCW/subdir.mk
--include src/COTS/APP/Exit_State/subdir.mk
 -include src/COTS/APP/ACC/subdir.mk
 -include src/subdir.mk
 -include subdir.mk
