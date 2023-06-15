@@ -31,6 +31,7 @@
 int main( void )
 {
 
+	/* Define the ultrasonic pins */
 	VAR(HULTSNC_ConfigType)
 	TRIG =
 	    {
@@ -38,29 +39,36 @@ int main( void )
 	        .u8Pin  = GPIOx_PIN8
 	    };
 
+	/* Initiate RCC for PORTA, PORTB and TIM1 */
 	MRCC_vInit( ) ;
-
 	MRCC_vEnablePeriphralCLK( RCC_AHB1, AHB1ENR_GPIOAEN  ) ;
 	MRCC_vEnablePeriphralCLK( RCC_AHB1, AHB1ENR_GPIOBEN  ) ;
 	MRCC_vEnablePeriphralCLK( RCC_APB2, APB2ENR_TIM1EN   ) ;
 
+	/* Lock GPIO pins specified for SW debug */
 	MGPIOx_vLockedPins( ) ;
 
+	/* Initiate STK timer */
 	MSysTick_vInit( ) ;
 
+	/* Initialize car motors */
 	HCarMove_vInit( ) ;
 
+	/* Set initial speed of the car (half of the speed) */
 	HCarMove_vSpeedRatio( SPEED_50_PERCENT ) ;
 
+	/* Initialize ultrasonic  */
 	HULTSNC_vInit( &TRIG ) ;
 
+	/* Initiate TIM1 and enable the counter */
 	MTIM1_vEnableCounter( ) ;
 
+	/* Initialize the mobile application to send/receive commands */
 	AMobApp_vInit( ) ;
 
 	while( TRUE )
 	{
-
+		/* Ask the user about the mode and run it */
 		AMobApp_vCntrlCar( ) ;
 
 	}
