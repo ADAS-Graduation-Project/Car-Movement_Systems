@@ -4244,7 +4244,7 @@ END GROUP
                 0x2000fc00                __Main_Stack_Limit = (__stack - __Main_Stack_Size)
                 [!provide]                PROVIDE (_Main_Stack_Limit, __Main_Stack_Limit)
                 0x00000100                _Minimum_Stack_Size = 0x100
-                0x200001dc                PROVIDE (_Heap_Begin, _end_noinit)
+                0x200001d4                PROVIDE (_Heap_Begin, _end_noinit)
                 0x2000fc00                PROVIDE (_Heap_Limit, (__stack - __Main_Stack_Size))
 
 .isr_vector     0x08000000      0x3f4
@@ -4325,16 +4325,16 @@ END GROUP
 
 .inits          0x080003f4       0x28
                 0x080003f4                __data_regions_array_start = .
-                0x080003f4        0x4 LONG 0x8003c98 LOADADDR (.data)
+                0x080003f4        0x4 LONG 0x8003c78 LOADADDR (.data)
                 0x080003f8        0x4 LONG 0x20000000 ADDR (.data)
                 0x080003fc        0x4 LONG 0x200000ac (ADDR (.data) + SIZEOF (.data))
-                0x08000400        0x4 LONG 0x8003c98 LOADADDR (.data_CCMRAM)
+                0x08000400        0x4 LONG 0x8003c78 LOADADDR (.data_CCMRAM)
                 0x08000404        0x4 LONG 0x10000000 ADDR (.data_CCMRAM)
                 0x08000408        0x4 LONG 0x10000000 (ADDR (.data_CCMRAM) + SIZEOF (.data_CCMRAM))
                 0x0800040c                __data_regions_array_end = .
                 0x0800040c                __bss_regions_array_start = .
                 0x0800040c        0x4 LONG 0x200000ac ADDR (.bss)
-                0x08000410        0x4 LONG 0x200001dc (ADDR (.bss) + SIZEOF (.bss))
+                0x08000410        0x4 LONG 0x200001d4 (ADDR (.bss) + SIZEOF (.bss))
                 0x08000414        0x4 LONG 0x10000000 ADDR (.bss_CCMRAM)
                 0x08000418        0x4 LONG 0x10000000 (ADDR (.bss_CCMRAM) + SIZEOF (.bss_CCMRAM))
                 0x0800041c                __bss_regions_array_end = .
@@ -4360,7 +4360,7 @@ END GROUP
 .flashtext
  *(.flashtext .flashtext.*)
 
-.text           0x08000420     0x3876
+.text           0x08000420     0x3856
  *(.text .text.*)
  .text._exit    0x08000420        0x2 ./system/src/newlib/_exit.o
                 0x08000420                _exit
@@ -4641,207 +4641,207 @@ END GROUP
  .text.Button_vCurrentData
                 0x0800228c       0x1c ./src/COTS/APP/ACC/ACC_program.o
  .text.AACC_vModeON
-                0x080022a8      0x128 ./src/COTS/APP/ACC/ACC_program.o
+                0x080022a8      0x108 ./src/COTS/APP/ACC/ACC_program.o
                 0x080022a8                AACC_vModeON
- .text.main     0x080023d0       0x58 ./src/main.o
-                0x080023d0                main
- .text          0x08002428      0x378 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
-                0x08002428                __aeabi_drsub
-                0x08002430                __aeabi_dsub
-                0x08002430                __subdf3
-                0x08002434                __aeabi_dadd
-                0x08002434                __adddf3
-                0x080026ac                __floatunsidf
-                0x080026ac                __aeabi_ui2d
-                0x080026cc                __floatsidf
-                0x080026cc                __aeabi_i2d
-                0x080026f0                __aeabi_f2d
-                0x080026f0                __extendsfdf2
-                0x08002734                __floatundidf
-                0x08002734                __aeabi_ul2d
-                0x08002744                __floatdidf
-                0x08002744                __aeabi_l2d
- .text          0x080027a0      0x424 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
-                0x080027a0                __aeabi_dmul
-                0x080027a0                __muldf3
-                0x080029f4                __divdf3
-                0x080029f4                __aeabi_ddiv
- .text          0x08002bc4       0xa0 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_truncdfsf2.o)
-                0x08002bc4                __truncdfsf2
-                0x08002bc4                __aeabi_d2f
- .text          0x08002c64      0x21c e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_addsubsf3.o)
-                0x08002c64                __aeabi_frsub
-                0x08002c6c                __subsf3
-                0x08002c6c                __aeabi_fsub
-                0x08002c70                __aeabi_fadd
-                0x08002c70                __addsf3
-                0x08002dd0                __aeabi_ui2f
-                0x08002dd0                __floatunsisf
-                0x08002dd8                __aeabi_i2f
-                0x08002dd8                __floatsisf
-                0x08002df4                __aeabi_ul2f
-                0x08002df4                __floatundisf
-                0x08002e04                __aeabi_l2f
-                0x08002e04                __floatdisf
- .text          0x08002e80       0xec e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_cmpsf2.o)
-                0x08002e80                __gesf2
-                0x08002e80                __gtsf2
-                0x08002e88                __lesf2
-                0x08002e88                __ltsf2
-                0x08002e90                __nesf2
-                0x08002e90                __eqsf2
-                0x08002e90                __cmpsf2
-                0x08002ef0                __aeabi_cfrcmple
-                0x08002ef8                __aeabi_cfcmpeq
-                0x08002ef8                __aeabi_cfcmple
-                0x08002f08                __aeabi_fcmpeq
-                0x08002f1c                __aeabi_fcmplt
-                0x08002f30                __aeabi_fcmple
-                0x08002f44                __aeabi_fcmpge
-                0x08002f58                __aeabi_fcmpgt
- .text.__errno  0x08002f6c        0xc e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-errno.o)
-                0x08002f6c                __errno
- .text.__itoa   0x08002f78       0x30 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-itoa.o)
-                0x08002f78                __itoa
- .text.itoa     0x08002fa8        0x4 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-itoa.o)
-                0x08002fa8                itoa
- .text.strcat   0x08002fac       0x1e e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-strcat.o)
-                0x08002fac                strcat
- *fill*         0x08002fca        0x2 
- .text.__utoa   0x08002fcc       0x7c e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-utoa.o)
-                0x08002fcc                __utoa
+ .text.main     0x080023b0       0x58 ./src/main.o
+                0x080023b0                main
+ .text          0x08002408      0x378 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_addsubdf3.o)
+                0x08002408                __aeabi_drsub
+                0x08002410                __aeabi_dsub
+                0x08002410                __subdf3
+                0x08002414                __aeabi_dadd
+                0x08002414                __adddf3
+                0x0800268c                __floatunsidf
+                0x0800268c                __aeabi_ui2d
+                0x080026ac                __floatsidf
+                0x080026ac                __aeabi_i2d
+                0x080026d0                __aeabi_f2d
+                0x080026d0                __extendsfdf2
+                0x08002714                __floatundidf
+                0x08002714                __aeabi_ul2d
+                0x08002724                __floatdidf
+                0x08002724                __aeabi_l2d
+ .text          0x08002780      0x424 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_muldivdf3.o)
+                0x08002780                __aeabi_dmul
+                0x08002780                __muldf3
+                0x080029d4                __divdf3
+                0x080029d4                __aeabi_ddiv
+ .text          0x08002ba4       0xa0 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_truncdfsf2.o)
+                0x08002ba4                __truncdfsf2
+                0x08002ba4                __aeabi_d2f
+ .text          0x08002c44      0x21c e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_addsubsf3.o)
+                0x08002c44                __aeabi_frsub
+                0x08002c4c                __subsf3
+                0x08002c4c                __aeabi_fsub
+                0x08002c50                __aeabi_fadd
+                0x08002c50                __addsf3
+                0x08002db0                __aeabi_ui2f
+                0x08002db0                __floatunsisf
+                0x08002db8                __aeabi_i2f
+                0x08002db8                __floatsisf
+                0x08002dd4                __aeabi_ul2f
+                0x08002dd4                __floatundisf
+                0x08002de4                __aeabi_l2f
+                0x08002de4                __floatdisf
+ .text          0x08002e60       0xec e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m\libgcc.a(_arm_cmpsf2.o)
+                0x08002e60                __gesf2
+                0x08002e60                __gtsf2
+                0x08002e68                __lesf2
+                0x08002e68                __ltsf2
+                0x08002e70                __nesf2
+                0x08002e70                __eqsf2
+                0x08002e70                __cmpsf2
+                0x08002ed0                __aeabi_cfrcmple
+                0x08002ed8                __aeabi_cfcmpeq
+                0x08002ed8                __aeabi_cfcmple
+                0x08002ee8                __aeabi_fcmpeq
+                0x08002efc                __aeabi_fcmplt
+                0x08002f10                __aeabi_fcmple
+                0x08002f24                __aeabi_fcmpge
+                0x08002f38                __aeabi_fcmpgt
+ .text.__errno  0x08002f4c        0xc e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-errno.o)
+                0x08002f4c                __errno
+ .text.__itoa   0x08002f58       0x30 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-itoa.o)
+                0x08002f58                __itoa
+ .text.itoa     0x08002f88        0x4 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-itoa.o)
+                0x08002f88                itoa
+ .text.strcat   0x08002f8c       0x1e e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-strcat.o)
+                0x08002f8c                strcat
+ *fill*         0x08002faa        0x2 
+ .text.__utoa   0x08002fac       0x7c e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-utoa.o)
+                0x08002fac                __utoa
  .text._vsnprintf_r
-                0x08003048       0x58 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
-                0x08003048                _vsniprintf_r
-                0x08003048                _vsnprintf_r
+                0x08003028       0x58 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
+                0x08003028                _vsniprintf_r
+                0x08003028                _vsnprintf_r
  .text.vsnprintf
-                0x080030a0       0x1c e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
-                0x080030a0                vsniprintf
-                0x080030a0                vsnprintf
+                0x08003080       0x1c e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-vsnprintf.o)
+                0x08003080                vsniprintf
+                0x08003080                vsnprintf
  .text.__ssputs_r
-                0x080030bc       0xb4 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x080030bc                __ssputs_r
+                0x0800309c       0xb4 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x0800309c                __ssputs_r
  .text._svfprintf_r
-                0x08003170      0x1ec e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
-                0x08003170                _svfiprintf_r
-                0x08003170                _svfprintf_r
+                0x08003150      0x1ec e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x08003150                _svfiprintf_r
+                0x08003150                _svfprintf_r
  .text._printf_common
-                0x0800335c       0xea e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x0800335c                _printf_common
- *fill*         0x08003446        0x2 
+                0x0800333c       0xea e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x0800333c                _printf_common
+ *fill*         0x08003426        0x2 
  .text._printf_i
-                0x08003448      0x224 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
-                0x08003448                _printf_i
- *fill*         0x0800366c        0x4 
- .text          0x08003670       0xa0 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memchr.o)
-                0x08003670                memchr
- .text.memcpy   0x08003710       0x16 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memcpy-stub.o)
-                0x08003710                memcpy
- .text.memmove  0x08003726       0x32 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memmove.o)
-                0x08003726                memmove
- .text._free_r  0x08003758       0x9c e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-freer.o)
-                0x08003758                _free_r
+                0x08003428      0x224 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x08003428                _printf_i
+ *fill*         0x0800364c        0x4 
+ .text          0x08003650       0xa0 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memchr.o)
+                0x08003650                memchr
+ .text.memcpy   0x080036f0       0x16 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memcpy-stub.o)
+                0x080036f0                memcpy
+ .text.memmove  0x08003706       0x32 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-memmove.o)
+                0x08003706                memmove
+ .text._free_r  0x08003738       0x9c e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-freer.o)
+                0x08003738                _free_r
  .text._malloc_r
-                0x080037f4       0xb4 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x080037f4                _malloc_r
+                0x080037d4       0xb4 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x080037d4                _malloc_r
  .text._realloc_r
-                0x080038a8       0x4c e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-reallocr.o)
-                0x080038a8                _realloc_r
- .text._sbrk_r  0x080038f4       0x20 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-sbrkr.o)
-                0x080038f4                _sbrk_r
+                0x08003888       0x4c e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-reallocr.o)
+                0x08003888                _realloc_r
+ .text._sbrk_r  0x080038d4       0x20 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-sbrkr.o)
+                0x080038d4                _sbrk_r
  .text.__malloc_lock
-                0x08003914        0x2 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
-                0x08003914                __malloc_lock
+                0x080038f4        0x2 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
+                0x080038f4                __malloc_lock
  .text.__malloc_unlock
-                0x08003916        0x2 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
-                0x08003916                __malloc_unlock
+                0x080038f6        0x2 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-mlock.o)
+                0x080038f6                __malloc_unlock
  .text._malloc_usable_size_r
-                0x08003918       0x10 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-msizer.o)
-                0x08003918                _malloc_usable_size_r
+                0x080038f8       0x10 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-msizer.o)
+                0x080038f8                _malloc_usable_size_r
  *(.rodata .rodata.* .constdata .constdata.*)
  .rodata.dumpExceptionStack.str1.4
-                0x08003928      0x11a ./system/src/cortexm/exception_handlers.o
- *fill*         0x08003a42        0x2 
+                0x08003908      0x11a ./system/src/cortexm/exception_handlers.o
+ *fill*         0x08003a22        0x2 
  .rodata.str1.4
-                0x08003a44       0x2a ./system/src/cortexm/exception_handlers.o
- *fill*         0x08003a6e        0x2 
+                0x08003a24       0x2a ./system/src/cortexm/exception_handlers.o
+ *fill*         0x08003a4e        0x2 
  .rodata.AHBPrescTable
-                0x08003a70       0x10 ./system/src/cmsis/system_stm32f4xx.o
-                0x08003a70                AHBPrescTable
- .rodata        0x08003a80       0x2f ./src/COTS/MCAL/UART/UART_program.o
+                0x08003a50       0x10 ./system/src/cmsis/system_stm32f4xx.o
+                0x08003a50                AHBPrescTable
+ .rodata        0x08003a60       0x2f ./src/COTS/MCAL/UART/UART_program.o
+ *fill*         0x08003a8f        0x1 
+ .rodata        0x08003a90       0x1f ./src/COTS/MCAL/TIM1/TIM1_program.o
  *fill*         0x08003aaf        0x1 
- .rodata        0x08003ab0       0x1f ./src/COTS/MCAL/TIM1/TIM1_program.o
- *fill*         0x08003acf        0x1 
- .rodata        0x08003ad0        0x2 ./src/COTS/HAL/DCMOTOR/DCM_program.o
- *fill*         0x08003ad2        0x2 
+ .rodata        0x08003ab0        0x2 ./src/COTS/HAL/DCMOTOR/DCM_program.o
+ *fill*         0x08003ab2        0x2 
  .rodata.ATraditional_vModeON.str1.4
-                0x08003ad4       0x37 ./src/COTS/APP/Traditional_Mode/Traditional_Mode_program.o
- *fill*         0x08003b0b        0x1 
+                0x08003ab4       0x37 ./src/COTS/APP/Traditional_Mode/Traditional_Mode_program.o
+ *fill*         0x08003aeb        0x1 
  .rodata.ANCC_vModeON.str1.4
-                0x08003b0c       0x1f ./src/COTS/APP/NCC/NCC_program.o
+                0x08003aec       0x1f ./src/COTS/APP/NCC/NCC_program.o
                                  0x27 (size before relaxing)
- *fill*         0x08003b2b        0x1 
+ *fill*         0x08003b0b        0x1 
  .rodata.AMobApp_vCntrlCar.str1.4
-                0x08003b2c       0x96 ./src/COTS/APP/Mob_APP/Mob_APP_program.o
- *fill*         0x08003bc2        0x2 
+                0x08003b0c       0x96 ./src/COTS/APP/Mob_APP/Mob_APP_program.o
+ *fill*         0x08003ba2        0x2 
  .rodata.AMobApp_vInit.str1.4
-                0x08003bc4       0x19 ./src/COTS/APP/Mob_APP/Mob_APP_program.o
- *fill*         0x08003bdd        0x3 
+                0x08003ba4       0x19 ./src/COTS/APP/Mob_APP/Mob_APP_program.o
+ *fill*         0x08003bbd        0x3 
  .rodata.AMobApp_vSendSpeedValue.str1.4
-                0x08003be0        0x2 ./src/COTS/APP/Mob_APP/Mob_APP_program.o
- *fill*         0x08003be2        0x2 
+                0x08003bc0        0x2 ./src/COTS/APP/Mob_APP/Mob_APP_program.o
+ *fill*         0x08003bc2        0x2 
  .rodata.AFCW_vModeON.str1.4
-                0x08003be4       0x36 ./src/COTS/APP/FCW/FCW_program.o
+                0x08003bc4       0x36 ./src/COTS/APP/FCW/FCW_program.o
                                  0x3d (size before relaxing)
- *fill*         0x08003c1a        0x2 
+ *fill*         0x08003bfa        0x2 
  .rodata.AACC_vModeON.str1.4
-                0x08003c1c       0x20 ./src/COTS/APP/ACC/ACC_program.o
+                0x08003bfc       0x20 ./src/COTS/APP/ACC/ACC_program.o
                                  0x27 (size before relaxing)
- .rodata        0x08003c3c        0x2 ./src/main.o
+ .rodata        0x08003c1c        0x2 ./src/main.o
  .rodata.__utoa.str1.1
-                0x08003c3e       0x25 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-utoa.o)
+                0x08003c1e       0x25 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-utoa.o)
  .rodata._svfprintf_r.str1.1
-                0x08003c63       0x11 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
+                0x08003c43       0x11 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-svfprintf.o)
  .rodata._printf_i.str1.1
-                0x08003c74       0x22 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x08003c54       0x22 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
  *(vtable)
  *(.eh_frame*)
  *(.glue_7)
- .glue_7        0x08003c96        0x0 linker stubs
+ .glue_7        0x08003c76        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08003c96        0x0 linker stubs
+ .glue_7t       0x08003c76        0x0 linker stubs
 
-.vfp11_veneer   0x08003c98        0x0
- .vfp11_veneer  0x08003c98        0x0 linker stubs
+.vfp11_veneer   0x08003c78        0x0
+ .vfp11_veneer  0x08003c78        0x0 linker stubs
 
-.v4_bx          0x08003c98        0x0
- .v4_bx         0x08003c98        0x0 linker stubs
+.v4_bx          0x08003c78        0x0
+ .v4_bx         0x08003c78        0x0 linker stubs
 
-.iplt           0x08003c98        0x0
- .iplt          0x08003c98        0x0 ./system/src/newlib/_exit.o
+.iplt           0x08003c78        0x0
+ .iplt          0x08003c78        0x0 ./system/src/newlib/_exit.o
 
-.rel.dyn        0x08003c98        0x0
- .rel.iplt      0x08003c98        0x0 ./system/src/newlib/_exit.o
+.rel.dyn        0x08003c78        0x0
+ .rel.iplt      0x08003c78        0x0 ./system/src/newlib/_exit.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08003c98                . = ALIGN (0x4)
-                0x08003c98                __exidx_start = .
+                0x08003c78                . = ALIGN (0x4)
+                0x08003c78                __exidx_start = .
 
 .ARM.exidx
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
-                0x08003c98                __exidx_end = .
-                0x08003c98                . = ALIGN (0x4)
-                0x08003c98                _etext = .
-                0x08003c98                __etext = .
+                0x08003c78                __exidx_end = .
+                0x08003c78                . = ALIGN (0x4)
+                0x08003c78                _etext = .
+                0x08003c78                __etext = .
 
-.data_CCMRAM    0x10000000        0x0 load address 0x08003c98
+.data_CCMRAM    0x10000000        0x0 load address 0x08003c78
  FILL mask 0xff
  *(.data.CCMRAM .data.CCMRAM.*)
                 0x10000000                . = ALIGN (0x4)
-                0x08003c98                _sidata = LOADADDR (.data)
+                0x08003c78                _sidata = LOADADDR (.data)
 
-.data           0x20000000       0xac load address 0x08003c98
+.data           0x20000000       0xac load address 0x08003c78
  FILL mask 0xff
                 0x20000000                _sdata = .
                 0x20000000                __data_start__ = .
@@ -4880,13 +4880,13 @@ END GROUP
                 0x200000ac                _edata = .
                 0x200000ac                __data_end__ = .
 
-.igot.plt       0x200000ac        0x0 load address 0x08003d44
+.igot.plt       0x200000ac        0x0 load address 0x08003d24
  .igot.plt      0x200000ac        0x0 ./system/src/newlib/_exit.o
 
 .bss_CCMRAM     0x10000000        0x0
  *(.bss.CCMRAM .bss.CCMRAM.*)
 
-.bss            0x200000ac      0x130
+.bss            0x200000ac      0x128
                 0x200000ac                __bss_start__ = .
                 0x200000ac                _sbss = .
  *(.bss_begin .bss_begin.*)
@@ -4920,48 +4920,42 @@ END GROUP
  .bss.Gv_u8InISR
                 0x200001a3        0x1 ./src/COTS/APP/ACC/ACC_program.o
                 0x200001a3                Gv_u8InISR
- .bss.L_f32Distance
-                0x200001a4        0x4 ./src/COTS/APP/ACC/ACC_program.o
-                0x200001a4                L_f32Distance
- .bss.L_u32SpeedValue
-                0x200001a8        0x4 ./src/COTS/APP/ACC/ACC_program.o
-                0x200001a8                L_u32SpeedValue
  .bss.__malloc_free_list
-                0x200001ac        0x4 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x200001ac                __malloc_free_list
+                0x200001a4        0x4 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x200001a4                __malloc_free_list
  .bss.__malloc_sbrk_start
-                0x200001b0        0x4 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
-                0x200001b0                __malloc_sbrk_start
+                0x200001a8        0x4 e:/parallel education diploma/imt_sdk_win_64/winarm/armgcc/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m\libg_nano.a(lib_a-nano-mallocr.o)
+                0x200001a8                __malloc_sbrk_start
  *(COMMON)
- COMMON         0x200001b4        0x4 ./system/src/newlib/_syscalls.o
-                0x200001b4                errno
- COMMON         0x200001b8       0x20 ./src/COTS/MCAL/UART/UART_program.o
-                0x200001b8                MUSART2_CallBack
-                0x200001bc                MUSART6_CallBack
-                0x200001c0                MUSART1_CallBack
-                0x200001c4                G_u8String
+ COMMON         0x200001ac        0x4 ./system/src/newlib/_syscalls.o
+                0x200001ac                errno
+ COMMON         0x200001b0       0x20 ./src/COTS/MCAL/UART/UART_program.o
+                0x200001b0                MUSART2_CallBack
+                0x200001b4                MUSART6_CallBack
+                0x200001b8                MUSART1_CallBack
+                0x200001bc                G_u8String
  *(.bss_end .bss_end.*)
- .bss_end       0x200001d8        0x4 ./system/src/newlib/_startup.o
-                0x200001dc                . = ALIGN (0x4)
-                0x200001dc                __bss_end__ = .
-                0x200001dc                _ebss = .
+ .bss_end       0x200001d0        0x4 ./system/src/newlib/_startup.o
+                0x200001d4                . = ALIGN (0x4)
+                0x200001d4                __bss_end__ = .
+                0x200001d4                _ebss = .
 
 .noinit_CCMRAM
  *(.noinit.CCMRAM .noinit.CCMRAM.*)
 
-.noinit         0x200001dc        0x0
-                0x200001dc                _noinit = .
+.noinit         0x200001d4        0x0
+                0x200001d4                _noinit = .
  *(.noinit .noinit.*)
-                0x200001dc                . = ALIGN (0x4)
-                0x200001dc                _end_noinit = .
+                0x200001d4                . = ALIGN (0x4)
+                0x200001d4                _end_noinit = .
                 [!provide]                PROVIDE (end, _end_noinit)
                 [!provide]                PROVIDE (_end, _end_noinit)
                 [!provide]                PROVIDE (__end, _end_noinit)
                 [!provide]                PROVIDE (__end__, _end_noinit)
 
-._check_stack   0x200001dc      0x100
-                0x200002dc                . = (. + _Minimum_Stack_Size)
- *fill*         0x200001dc      0x100 
+._check_stack   0x200001d4      0x100
+                0x200002d4                . = (. + _Minimum_Stack_Size)
+ *fill*         0x200001d4      0x100 
 
 .b1text
  *(.b1text)
@@ -5220,7 +5214,7 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0xb68a
+.debug_info     0x00000000     0xb6ae
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x956 ./system/src/newlib/_exit.o
  .debug_info    0x00000956      0x942 ./system/src/newlib/_sbrk.o
@@ -5249,10 +5243,10 @@ END GROUP
  .debug_info    0x00009ffd      0x1fc ./src/COTS/APP/NCC/NCC_program.o
  .debug_info    0x0000a1f9      0xb35 ./src/COTS/APP/Mob_APP/Mob_APP_program.o
  .debug_info    0x0000ad2e      0x45c ./src/COTS/APP/FCW/FCW_program.o
- .debug_info    0x0000b18a      0x30c ./src/COTS/APP/ACC/ACC_program.o
- .debug_info    0x0000b496      0x1f4 ./src/main.o
+ .debug_info    0x0000b18a      0x330 ./src/COTS/APP/ACC/ACC_program.o
+ .debug_info    0x0000b4ba      0x1f4 ./src/main.o
 
-.debug_abbrev   0x00000000     0x2aa6
+.debug_abbrev   0x00000000     0x2ac0
  *(.debug_abbrev)
  .debug_abbrev  0x00000000      0x1f3 ./system/src/newlib/_exit.o
  .debug_abbrev  0x000001f3      0x1fc ./system/src/newlib/_sbrk.o
@@ -5281,8 +5275,8 @@ END GROUP
  .debug_abbrev  0x00002552       0xa3 ./src/COTS/APP/NCC/NCC_program.o
  .debug_abbrev  0x000025f5      0x219 ./src/COTS/APP/Mob_APP/Mob_APP_program.o
  .debug_abbrev  0x0000280e       0xfe ./src/COTS/APP/FCW/FCW_program.o
- .debug_abbrev  0x0000290c       0xe4 ./src/COTS/APP/ACC/ACC_program.o
- .debug_abbrev  0x000029f0       0xb6 ./src/main.o
+ .debug_abbrev  0x0000290c       0xfe ./src/COTS/APP/ACC/ACC_program.o
+ .debug_abbrev  0x00002a0a       0xb6 ./src/main.o
 
 .debug_line     0x00000000     0x771d
  *(.debug_line)
@@ -5428,7 +5422,7 @@ END GROUP
  .debug_str     0x00078885        0xe ./src/main.o
                                0x3d59 (size before relaxing)
 
-.debug_loc      0x00000000     0x271c
+.debug_loc      0x00000000     0x27e6
  *(.debug_loc)
  .debug_loc     0x00000000       0x85 ./system/src/newlib/_sbrk.o
  .debug_loc     0x00000085      0x2cb ./system/src/newlib/_startup.o
@@ -5453,6 +5447,7 @@ END GROUP
  .debug_loc     0x00002556       0xa5 ./src/COTS/APP/NCC/NCC_program.o
  .debug_loc     0x000025fb       0x41 ./src/COTS/APP/Mob_APP/Mob_APP_program.o
  .debug_loc     0x0000263c       0xe0 ./src/COTS/APP/FCW/FCW_program.o
+ .debug_loc     0x0000271c       0xca ./src/COTS/APP/ACC/ACC_program.o
 
 .debug_macinfo
  *(.debug_macinfo)

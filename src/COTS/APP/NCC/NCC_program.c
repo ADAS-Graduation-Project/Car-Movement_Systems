@@ -39,6 +39,7 @@ void ANCC_vModeON( void )
 	/* Print "NCC Mode ON" on the mob application terminal */
 	HBluetooth_vSendString( "\nNCC Mode ON\n" ) ;
 
+	/* Keep the car moving forward and receiving the pressed buttons from the user until he pressed the exit button ('e') */
 	do
 	{
 
