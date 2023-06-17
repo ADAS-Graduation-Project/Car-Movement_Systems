@@ -99,7 +99,7 @@ void AMobApp_vCntrlCar( void )
 		HBluetooth_vSendString( "\n4-FCW Mode\n" ) ;
 		HBluetooth_vSendString( "\n5-Exit Mode\n" ) ;
 
-		/* This is a blocking (polling) function that receives a char and return it */
+		/* This is a blocking (polling) function that receives a char and return it to a variable */
 		L_c8RecievedState = HBluetooth_u8ReceiveByte( ) ;
 
 		/* Car mode decision according to the received char */

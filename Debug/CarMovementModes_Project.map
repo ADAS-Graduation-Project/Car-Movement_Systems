@@ -5284,7 +5284,7 @@ END GROUP
  .debug_abbrev  0x0000290c       0xe4 ./src/COTS/APP/ACC/ACC_program.o
  .debug_abbrev  0x000029f0       0xb6 ./src/main.o
 
-.debug_line     0x00000000     0x7716
+.debug_line     0x00000000     0x771a
  *(.debug_line)
  .debug_line    0x00000000      0x363 ./system/src/newlib/_exit.o
  .debug_line    0x00000363      0x317 ./system/src/newlib/_sbrk.o
@@ -5309,12 +5309,12 @@ END GROUP
  .debug_line    0x00005bab      0x1f7 ./src/COTS/HAL/Bluetooth/Bluetooth_config.o
  .debug_line    0x00005da2      0x340 ./src/COTS/HAL/Bluetooth/Bluetooth_program.o
  .debug_line    0x000060e2      0x1c0 ./src/COTS/HAL/BUZZER/BUZZER_program.o
- .debug_line    0x000062a2      0x2a9 ./src/COTS/APP/Traditional_Mode/Traditional_Mode_program.o
- .debug_line    0x0000654b      0x213 ./src/COTS/APP/NCC/NCC_program.o
- .debug_line    0x0000675e      0x68e ./src/COTS/APP/Mob_APP/Mob_APP_program.o
- .debug_line    0x00006dec      0x371 ./src/COTS/APP/FCW/FCW_program.o
- .debug_line    0x0000715d      0x329 ./src/COTS/APP/ACC/ACC_program.o
- .debug_line    0x00007486      0x290 ./src/main.o
+ .debug_line    0x000062a2      0x2ad ./src/COTS/APP/Traditional_Mode/Traditional_Mode_program.o
+ .debug_line    0x0000654f      0x213 ./src/COTS/APP/NCC/NCC_program.o
+ .debug_line    0x00006762      0x68e ./src/COTS/APP/Mob_APP/Mob_APP_program.o
+ .debug_line    0x00006df0      0x371 ./src/COTS/APP/FCW/FCW_program.o
+ .debug_line    0x00007161      0x329 ./src/COTS/APP/ACC/ACC_program.o
+ .debug_line    0x0000748a      0x290 ./src/main.o
 
 .debug_frame    0x00000000     0x15d0
  *(.debug_frame)
