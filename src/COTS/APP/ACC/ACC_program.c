@@ -203,7 +203,7 @@ void AACC_vModeON( void )
 					/* Print "ACC Mode Off" on the mob application terminal */
 					HBluetooth_vSendString( "\nACC Mode Off\n" ) ;
 
-					/* Clear the address of the passed call back function  */
+					/* Clear the address of the passed call back function */
 					HBluetooth_u8AsynchReceiveByte( NULL ) ;
 
 				break ;
